@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<div id="app">
+    <p>{{ message }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Olá mundão!'
+        },
+        methods: {
+            changeText(event){
+                this.message = event.target.value;
+            }
+        }
+    })
+</script>
