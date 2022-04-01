@@ -2,7 +2,7 @@
 
 
 <div id="app">
-    <p>{{ message }}</p>
+    <p v-once>{{ message }}</p>
     <p>{{ saudacao() }}</p>
     <a v-bind:href="link">Google</a>
 </div>
@@ -11,13 +11,13 @@
     new Vue({
         el: '#app',
         data: {
-            message: 'Olá mundão!',
+            message: 'Bom dia!',
             link: 'http://google.com.br'
         },
         methods: {
             saudacao: function(){
-                console.log(this);
-                return this.message
+                this.message = 'Usando VueJS';
+                return this.message;
             }
         }
     })

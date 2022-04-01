@@ -1,0 +1,13 @@
+Anotações VueJS
+
+{{ exemplo }} = O html só interpretará a double chaves, caso o retorno do conteúdo for texto. É usada dentro das tags.
+
+Para propriedades, é usada as diretivas:
+
+    v-on: Escuta um evento
+    v-bind
+    v-once: Resolve o valor uma única vez
+    v-html: Interpreta o html dentro de uma propriedade do objeto
+
+    Diretivas também podem ser criadas: teste-bind.
+

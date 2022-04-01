@@ -1,0 +1,52 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ contador }}</p>
+    <button v-on:click="somar(5, $event)">Somar 1</button>
+    <p style="display: flex; flex-direction: column;" v-on:mousemove="atualizarXeY">Mouse: {{ x }} e {{ y }}
+        <span v-on:mousemove="parar">PARAR EVENTO</span>
+        <span v-on:mousemove.stop>PARAR EVENTO 2</span>
+        <span v-on:mousemove.stop.prevent>PARAR EVENTO 3</span>
+        <a href="http://www.google.com" target="_blank" v-on:click.prevent>Google</a><br> <!-- v-on para o comportamento padrão do navegador -->
+        <input type="text" v-on:keyup.enter="alertar"> <!-- Envia um alerta ao apertar somente o enter, caso queira com outra tecla, é só substituir o enter -->
+    </p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            x: 0,
+            y: 0
+        },
+        methods: {
+            somar(number, event){
+
+                this.contador += number;
+                console.log(number, event);
+
+            },
+
+            atualizarXeY(e){
+
+                this.x = e.screenX;
+                this.y = e.screenY;
+
+            },
+
+            parar(e){
+
+                e.stopPropagation();
+
+            },
+
+            alertar(){
+
+                 alert("Ola")
+
+            }
+        }
+
+    })
+</script>
